@@ -3,6 +3,7 @@
 include 'config/conexion.php';
 $db= new conexion();
 */
+include'class.agenda.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,5 +24,8 @@ $db= new conexion();
     <input type="submit" name="submit" value="Enviar">
 
     </form>
+
+    <?php
+        include 'tabla.php';    ?>
 </body>
 </html>

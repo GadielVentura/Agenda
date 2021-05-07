@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
         
         $agenda = new Agenda ($nom,$dom,$tel,$com);
 
-        $agenda->insert();
+        $agenda = insert();
     }
 
     if($_POST['accion']=='update'){
