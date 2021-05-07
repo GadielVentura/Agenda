@@ -22,12 +22,36 @@ class Agenda{
         return new self('','','','');
     }
 
+    static function soloId($id){
+
+        return new self('','','','',$id);
+    }
+
     public function insert(){
 
         $db = new Conexion();
         $query = "INSERT INTO contactos(nombre,domicilio,telefono,comentarios) VALUES('$this->nombre','$this->domicilio','$this->telefono','$this->comentarios')";
 
         $db->query($query) ? header("Location: index.php?res=insertado") : header("Location: index.php?res=error");
+    }
+
+    public function Update(){
+
+        $db = new Conexion();
+        $query = "UPDATE contactos SET nombre=, domicilio=,telefono=,comentario= WHERE id= ";
+
+        $db->query($query) ? header("Location: index.php?res=insertado") : header("Location: index.php?res=error");
+    }
+
+    public function selecId(){
+
+        $db = new Conexion();
+        $query="SELECT * FROM contactos WHERE id=$this->id";
+        $resul=$db->query($query);
+
+        return $resul;
+
+
     }
 
     public function select(){

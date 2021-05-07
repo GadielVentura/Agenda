@@ -4,6 +4,9 @@ include 'config/conexion.php';
 $db= new conexion();
 */
 include'class.agenda.php';
+
+$datos = array('nombre'=>'','domicilio' => '', 'telefono' => '', 'comentarios' => '','id' => '');
+include'get.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +19,14 @@ include'class.agenda.php';
 </head>
 <body>
     <form action="post.php" method="POST">
-    <input type="text" name="nombre" placeholder="nombre" required="requiered">
-    <input type="text" name="domicilio" placeholder="calle y numero" required="requiered">
-    <input type="text" name="telefono" placeholder="telefono" required="requiered">
-    <textarea name="comentarios" required="requiered">Comentarios</textarea>
+    <input type="text" name="nombre" value="<?php echo $datos['nombre']; ?>" placeholder="nombre" required="requiered" >
+
+    <input type="text" name="domicilio" placeholder="calle y numero" required="requiered" value="<?php echo $datos['domicilio'];  ?>">
+
+    <input type="text" name="telefono" placeholder="telefono" required="requiered" value="<?php echo $datos['telefono'];  ?>">
+
+    <textarea name="comentarios" required="requiered" value="<?php echo $datos['comentarios'];  ?>">Comentarios</textarea>
+
     <input type="hidden" name="accion" value="insert">
     <input type="submit" name="submit" value="Enviar">
 
