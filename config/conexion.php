@@ -15,7 +15,7 @@ class Conexion extends mysqli{
 
         $this->connect_errno ? die('Error al conectar'. mysqli_connect_errno()) : $m ='conectado';
 
-        echo $m;
+//        echo $m;
     }
 
 
